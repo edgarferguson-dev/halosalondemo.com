@@ -101,7 +101,7 @@
   .voice{background:linear-gradient(135deg,#1A1006,#0E0A08,#1A0E06);padding:5rem 48px;text-align:center;border-top:1px solid rgba(193,127,58,.15);border-bottom:1px solid rgba(193,127,58,.15);scroll-margin-top:120px;}
   .voice-card{max-width:780px;margin:0 auto;padding:36px;border:1px solid var(--line);border-radius:28px;background:rgba(14,10,8,.5);box-shadow:var(--shadow);}
   .voice p{font-size:.93rem;color:var(--smoke);max-width:400px;margin:0 auto 36px;line-height:1.8;}
-  .voice-tab{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 18px;padding:12px 20px;border-radius:999px;background:rgba(232,192,128,.1);border:1px solid rgba(232,192,128,.22);color:var(--amber);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;}
+  .voice-tab{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 18px;padding:12px 20px;border-radius:999px;background:rgba(232,192,128,.1);border:1px solid rgba(232,192,128,.22);color:var(--amber);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;}
   .voice-widget-shell{max-width:440px;margin:0 auto;padding:18px;border-radius:24px;background:rgba(251,247,242,.04);border:1px solid rgba(251,247,242,.08);}
   elevenlabs-convai{display:block;width:100%;min-height:110px;}
 
@@ -231,8 +231,8 @@
       <span class="sec-label">Available 24 / 7</span>
       <h2 class="sec-title">Talk to Jade, Our AI Front Desk</h2>
       <p>Questions about services, pricing, or availability? Jade answers instantly, any time, day or night.</p>
-      <div class="voice-tab">Tap To Speak With Jade</div>
-      <div class="voice-widget-shell">
+      <button class="voice-tab" type="button" id="jade-trigger">Tap To Speak With Jade</button>
+      <div class="voice-widget-shell" id="jade-widget-shell">
         <elevenlabs-convai
           agent-id="agent_5501kp10dy31ejr8e1k3mcdzdk2c"
           variant="expanded"
@@ -243,6 +243,20 @@
           speaking-text="Jade is speaking"
         ></elevenlabs-convai>
         <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+        <script>
+          window.addEventListener('load', function () {
+            var jadeTrigger = document.getElementById('jade-trigger');
+            var jadeWidget = document.querySelector('elevenlabs-convai');
+            var jadeShell = document.getElementById('jade-widget-shell');
+
+            if (!jadeTrigger || !jadeWidget || !jadeShell) return;
+
+            jadeTrigger.addEventListener('click', function () {
+              jadeShell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              jadeWidget.click();
+            });
+          });
+        </script>
       </div>
     </div>
   </div>
