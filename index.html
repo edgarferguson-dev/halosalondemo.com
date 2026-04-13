@@ -98,9 +98,12 @@
   .stat-n{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:600;color:var(--ember);line-height:1;display:block;}
   .stat-l{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);display:block;margin-top:6px;}
 
-  .voice{background:linear-gradient(135deg,#1A1006,#0E0A08,#1A0E06);padding:5rem 48px;text-align:center;border-top:1px solid rgba(193,127,58,.15);border-bottom:1px solid rgba(193,127,58,.15);}
+  .voice{background:linear-gradient(135deg,#1A1006,#0E0A08,#1A0E06);padding:5rem 48px;text-align:center;border-top:1px solid rgba(193,127,58,.15);border-bottom:1px solid rgba(193,127,58,.15);scroll-margin-top:120px;}
   .voice-card{max-width:780px;margin:0 auto;padding:36px;border:1px solid var(--line);border-radius:28px;background:rgba(14,10,8,.5);box-shadow:var(--shadow);}
   .voice p{font-size:.93rem;color:var(--smoke);max-width:400px;margin:0 auto 36px;line-height:1.8;}
+  .voice-widget-shell{max-width:420px;margin:0 auto;padding:18px;border-radius:24px;background:rgba(251,247,242,.04);border:1px solid rgba(251,247,242,.08);}
+  elevenlabs-convai{display:block;width:100%;min-height:86px;}
+  .voice-tab{display:none;}
 
   .booking{background:var(--bark);padding:6rem 48px;}
   .booking-panel{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:32px;border-radius:30px;background:
@@ -120,7 +123,7 @@
   .footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(193,127,58,.1);display:flex;justify-content:space-between;font-size:.68rem;color:rgba(138,122,106,.4);}
 
   @media(max-width:1024px){.hero-shell,.booking-panel{grid-template-columns:1fr;}.svc-grid{grid-template-columns:repeat(2,1fr);}.about-inner{grid-template-columns:1fr;gap:44px;}.mosaic-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.mc:first-child{grid-row:auto;}}
-  @media(max-width:640px){nav{padding:16px 20px;}.nav-links{display:none;}.hero{padding:0 20px 48px;}.mosaic-sec,.services,.about,.voice,.booking,footer{padding-left:20px;padding-right:20px;}.strip{gap:20px;padding:20px;}.svc-grid{grid-template-columns:1fr;}.about-imgs{grid-template-columns:1fr;grid-template-rows:auto;}.ai:first-child{grid-row:auto;}.stats{flex-direction:column;gap:20px;}.voice-card,.booking-panel{padding:24px;}.footer-inner{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;gap:8px;}}
+  @media(max-width:640px){nav{padding:16px 20px;}.nav-links{display:none;}.hero{padding:0 20px 48px;}.mosaic-sec,.services,.about,.voice,.booking,footer{padding-left:20px;padding-right:20px;}.strip{gap:20px;padding:20px;}.svc-grid{grid-template-columns:1fr;}.about-imgs{grid-template-columns:1fr;grid-template-rows:auto;}.ai:first-child{grid-row:auto;}.stats{flex-direction:column;gap:20px;}.voice-card,.booking-panel{padding:24px;}.voice-widget-shell{padding:14px;}.voice-tab{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:999px;background:linear-gradient(135deg,var(--amber),var(--ember));color:var(--ink);font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;box-shadow:0 16px 36px rgba(193,127,58,.34);z-index:400;}.footer-inner{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;gap:8px;}}
 </style>
 </head>
 <body>
@@ -222,19 +225,21 @@
   </div>
 </section>
 
-<section class="voice">
+<section class="voice" id="jade-voice">
   <div class="container">
     <div class="voice-card">
       <span class="sec-label">Available 24 / 7</span>
       <h2 class="sec-title">Talk to Jade, Our AI Front Desk</h2>
       <p>Questions about services, pricing, or availability? Jade answers instantly, any time, day or night.</p>
-      <div style="display:inline-flex;flex-direction:column;align-items:center;">
+      <div class="voice-widget-shell">
         <elevenlabs-convai agent-id="agent_5501kp10dy31ejr8e1k3mcdzdk2c"></elevenlabs-convai>
         <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
       </div>
     </div>
   </div>
 </section>
+
+<a class="voice-tab" href="#jade-voice">Talk to Jade</a>
 
 <section class="booking" id="booking">
   <div class="booking-panel">
