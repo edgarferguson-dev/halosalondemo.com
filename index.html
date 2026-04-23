@@ -103,8 +103,10 @@
   .voice p{font-size:.93rem;color:var(--smoke);max-width:400px;margin:0 auto 36px;line-height:1.8;}
   .voice-tab{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 18px;padding:12px 20px;border-radius:999px;background:rgba(232,192,128,.1);border:1px solid rgba(232,192,128,.22);color:var(--amber);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;}
   .voice-widget-shell{max-width:440px;margin:0 auto;padding:18px;border-radius:24px;background:rgba(251,247,242,.04);border:1px solid rgba(251,247,242,.08);}
-  elevenlabs-convai{display:block;width:100%;min-height:110px;}
 
+  .phone-cta-btn{display:inline-flex;align-items:center;gap:12px;padding:18px 36px;border-radius:999px;background:linear-gradient(135deg,var(--amber),#c17f3a);color:#0E0A08;font-size:1.1rem;font-weight:700;text-decoration:none;letter-spacing:.02em;box-shadow:0 4px 24px rgba(232,192,128,.35);transition:transform .2s,box-shadow .2s;margin-top:8px;}
+  .phone-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,192,128,.5);}
+  .phone-cta-btn svg{flex-shrink:0;}
   .booking{background:var(--bark);padding:6rem 48px;}
   .booking-panel{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:32px;border-radius:30px;background:
     linear-gradient(135deg,rgba(232,192,128,.1),rgba(26,18,16,.92) 36%,rgba(14,10,8,.96) 100%);
@@ -229,35 +231,12 @@
   <div class="container">
     <div class="voice-card">
       <span class="sec-label">Available 24 / 7</span>
-      <h2 class="sec-title">Talk to Jade, Our AI Front Desk</h2>
-      <p>Questions about services, pricing, or availability? Jade answers instantly, any time, day or night.</p>
-      <button class="voice-tab" type="button" id="jade-trigger">Tap To Speak With Jade</button>
-      <div class="voice-widget-shell" id="jade-widget-shell">
-        <elevenlabs-convai
-          agent-id="agent_5501kp10dy31ejr8e1k3mcdzdk2c"
-          variant="expanded"
-          action-text="Talk to Jade"
-          start-call-text="Tap to Speak"
-          end-call-text="End Call"
-          listening-text="Listening..."
-          speaking-text="Jade is speaking"
-        ></elevenlabs-convai>
-        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-        <script>
-          window.addEventListener('load', function () {
-            var jadeTrigger = document.getElementById('jade-trigger');
-            var jadeWidget = document.querySelector('elevenlabs-convai');
-            var jadeShell = document.getElementById('jade-widget-shell');
-
-            if (!jadeTrigger || !jadeWidget || !jadeShell) return;
-
-            jadeTrigger.addEventListener('click', function () {
-              jadeShell.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              jadeWidget.click();
-            });
-          });
-        </script>
-      </div>
+      <h2 class="sec-title">Call Us to Book or Ask Questions</h2>
+      <p>Ready to book your appointment or have a question? Give us a ring — Tonya will take care of you.</p>
+      <a href="tel:+19292983797" class="phone-cta-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.68 3.43a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.09a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (929) 298-3797
+      </a>
     </div>
   </div>
 </section>
